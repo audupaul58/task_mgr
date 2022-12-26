@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{%load static %}
+
+{% load bootstrap5 %}
+
+{% block title %}Airdrop{% endblock title %}
+
+{% block body %}
+
+
+
+<div class="container p-5 mt-5">
+  {% buttons %}
+
+  <button type="button" class="btn btn-dark"><a class="text-light" href="{% url 'create_new'%}">Add New</a></button>
+  
+  {% endbuttons %}
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">URL</th>
+            <th scope="col">Frequency</th>
+            <th scope="col">Network</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Wallet code</th>
+            <th scope="col"></th>
+
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          {% for item in posts %}
+          <tr>
+            <td>{{item.title}}</td>
+            <td><a class="text-light" href="{{item.url|slice:'0:60'}}" target="blank">{{item.url|slice:'0:60'}}</a> </td>
+            <td>{{item.frequency}}</td>
+            <td>{{item.network}}</td>
+            <td>{{item.endDate}}</td>
+            <td>{{item.walletCode}}</td>
+            <td> <a class="text-light" href="{% url 'airdrop_details' pk=item.pk %}">More</a></td>
+            <td> <a class="text-light" href="{% url 'airdrop_update' pk=item.pk %}"><i class="bi bi-pencil-square"></i></a></td>
+            <td> <a class="text-light" href="{% url 'airdrop_delete' pk=item.pk %}"><i class="bi bi-trash"></i></a></td>
+
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+
+{% endblock body %}

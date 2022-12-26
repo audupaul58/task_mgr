@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% block title %} Contact {% endblock title %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css'}">
+
+
+
+{% block body %}
+<main>
+	<section class="section">
+		<div class="container">
+			<div class="row">
+				
+				</div>
+				<div class="col-lg-6 mt-4 mt-lg-0 m-auto">
+					<form method="POST" action="#!" class="row">
+
+						{% csrf_token %}
+						{% bootstrap_form form %}
+              <input type="submit" class="btn mybutton btn-send  pt-2 btn-block
+                  " value="SUBMIT" >
+          
+      		</div>
+		</form>
+	</div>
+			</div>
+		</div>
+	</section>
+</main>
+{% endblock body %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{%load static %}
+
+{% load widget_tweaks %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+
+<div class="signup-form">	
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <form >
+		<div class="form-group">
+            <H6>You have Successfully logout</H6>
+
+            <br>
+            <br>
+          
+        <a href="{% url 'login'%}" class="btn" style="color: white; background-color: #ff0909;"type="submit" id="header-links"> Login </a>
+        </div>
+		
+    </form>
+	
+</div>
+
+{% endblock body %}

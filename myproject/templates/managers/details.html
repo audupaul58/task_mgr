@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{%load static %}
+
+{% load bootstrap5 %}
+
+{% block title %}Details{% endblock title %}
+
+{% block body %}
+
+
+
+<div class="container p-5 mt-5">
+    <div class="row">
+        <div class="col md-2"></div>
+        <div class="col md-8 border border-warning ">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{post.title}}</li>
+                <li class="list-group-item"> <a class="text-light" href="{{post.url}}" target="blank">{{post.url}}</a> </li>
+                <li class="list-group-item">{{post.network}}</li>
+                <li class="list-group-item">{{post.wallet}}</li>
+                <li class="list-group-item">{{post.completed}}</li>
+                <li class="list-group-item">{{post.frequency}}</li>
+                <li class="list-group-item">{{post.endDate}}</li>
+                <li class="list-group-item">{{post.walletCode}}</li>
+              </ul>
+              
+        </div>
+        <div class="col md-2"></div>
+    </div>
+
+
+</div>
+
+
+{% endblock body %}

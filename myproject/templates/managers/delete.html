@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% block title %}Delete{% endblock title %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css'}">
+
+
+
+{% block body %}
+    <div class="container bg-light">
+        <div class="row my-5">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 p-4">
+                <form action="" method="post" class="form">
+                    {% csrf_token %}
+                    <p>Do you want to Delete <h3>{{object.title}}!</h3></p>
+                    {% buttons %}
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                    {% endbuttons %}
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+{% endblock body %}

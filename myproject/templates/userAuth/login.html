@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%load static %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+
+<div class="signup-form">	
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <form  method="post">
+        {% csrf_token %}
+
+        {{form.non_field_errors}}
+		<h2 class="text-headert">Login</h2>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				{{form.username}}
+                {{form.username.errors}}
+
+			</div>
+        </div>
+       
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				{{form.password}}
+                {{form.password.errors}}
+			</div>
+        </div>
+		   
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+        </div>
+		
+    </form>
+	<div class="text-center">Don't have an account? <a href="/auth/register">SignUp</a>.</div>
+</div>
+
+{% endblock body %}
